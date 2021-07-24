@@ -18,6 +18,7 @@ h1 {
     color: #FFF;
     margin: 20px 0;
     font-size: 20px;
+    color: #fffb00;
 }
 
 .progress {
@@ -28,7 +29,7 @@ h1 {
     right: 0;
 }
 .progress--bar {
-    background-color: #00FF00;
+    background-color: #fffb00;
     height: 100%;
     transition: all ease .5s;
 }
@@ -52,10 +53,10 @@ h1 {
     display: flex;
     align-items: center;
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #fffb00;
     border-radius: 10px;
     margin-bottom: 5px;
-    color: #AAA;
+    color: #000;
     font-size: 16px;
     cursor: pointer;
 }
@@ -69,14 +70,14 @@ h1 {
     margin-left: 5px;
     margin-right: 10px;
     background-color: rgba(0, 0, 0, 0.8);
-    color: #555;
+    color: #FFF;
 }
 .option:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #ffe100;
 }
 
 .scoreArea {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #fffb00;
     padding: 20px;
     border-radius: 20px;
     margin: 10px;
@@ -108,14 +109,14 @@ h1 {
 .scoreArea button {
     border: 0;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #CCC;
+    background-color: #fffb00;
+    color: #000;
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
 }
 .scoreArea button:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #ffe100;
 }
 
 footer {
