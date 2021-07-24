@@ -2,6 +2,11 @@ let currentQuestion = 0;
 let correctAnswers = 0;
 
 showQuestion();
+
+document
+  .querySelector(".scoreArea button")
+  .addEventListener("click", resetEvent);
+
 function showQuestion() {
   if (questions[currentQuestion]) {
     //para exibir a questão
@@ -32,6 +37,7 @@ function showQuestion() {
     });
   } else {
     //quando acabam as questões
+    finishQuiz();
   }
 }
 
@@ -43,5 +49,38 @@ function optionClickEvent(e) {
   }
 
   currentQuestion++;
+  showQuestion();
+}
+
+function finishQuiz() {
+  let points = Math.floor((correctAnswers / questions.length) * 100); //quantidade de pontos - respostas certas
+
+  if (points < 30) {
+    document.querySelector(".scoreText1").innerHTML =
+      "Iiiiii.. você pode melhorar né?";
+    document.querySelector(".scorePct").style.color = "#FF0000";
+  } else if (points >= 30 && points < 70) {
+    document.querySelector(".scoreText1").innerHTML = "Muito bom!";
+    document.querySelector(".scorePct").style.color = "#333";
+  } else if (points >= 70) {
+    document.querySelector(".scoreText1").innerHTML = "Parabéns!!";
+    document.querySelector(".scorePct").style.color = "#0D630D";
+  }
+
+  document.querySelector(".scorePct").innerHTML = `Acertou ${points}%`;
+  document.querySelector(
+    ".scoreText2"
+  ).innerHTML = `Você respondeu ${questions.length} questões e acertou ${correctAnswers}`;
+
+  document.querySelector(".scoreArea").style.display = "block"; //mostra a area do Score
+  document.querySelector(".questionArea").style.display = "none"; //esconde a área de perguntas
+
+  document.querySelector(".progress--bar").style.width = "100% "; //deixa em 100% por ter acabado as questões
+}
+
+function resetEvent() {
+  //vai reiniciar o quiz
+  correctAnswers = 0;
+  currentQuestion = 0;
   showQuestion();
 }
